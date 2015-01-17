@@ -8,6 +8,7 @@
 
 #import "TableViewController.h"
 #import "AstronomicalData.h"
+#import "OuterSpaceObject.h"
 
 @interface TableViewController ()
 
@@ -27,39 +28,11 @@
     
     planets = [[NSMutableArray alloc] init];
     
-    NSString *planet1 = @"Mercury";
-    NSString *planet2 = @"Venus";
-    NSString *planet3 = @"Earth";
-    NSString *planet4 = @"Mars";
-    NSString *planet5 = @"Jupitor";
-    NSString *planet6 = @"Saturn";
-    NSString *planet7 = @"Uranus";
-    NSString *planet8 = @"Neptune";
-    
-    [planets addObject: planet1];
-    [planets addObject: planet2];
-    [planets addObject: planet3];
-    [planets addObject: planet4];
-    [planets addObject: planet5];
-    [planets addObject: planet6];
-    [planets addObject: planet7];
-    [planets addObject: planet8];
-    
-//    NSMutableDictionary *myDictionary = [[NSMutableDictionary alloc] init];
-//    NSString *firstColor = @"red";
-//    [myDictionary setObject: firstColor forKey: @"firetruck color"];
-//    [myDictionary setObject: @"blue" forKey: @"ocean color"];
-//    [myDictionary setObject: @"yellow" forKey: @"star color"];
-//    NSLog(@"%@", myDictionary);
-//    
-//    NSString *blueString = [myDictionary objectForKey: @"ocean color"];
-//    NSLog(@"%@", blueString);
-    
-    NSNumber *mynumber = [NSNumber numberWithInt: 5];
-    NSLog(@"%@", mynumber);
-    NSNumber *floatNumber = [NSNumber numberWithFloat: 3.14];
-    NSLog(@"%@", floatNumber);
-    
+    for (NSMutableDictionary *planetData in [AstronomicalData allKnownPlanets]) {
+        NSString *imageName = [NSString stringWithFormat:@"%@.jpg", planetData[PLANET_NAME]];
+        OuterSpaceObject *planet = [[OuterSpaceObject alloc] initWithData:planetData andImage:[UIImage imageNamed:imageName]];
+        [planets addObject: planet];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,7 +58,13 @@
     
     // Configure the cell...
     
-    [cell.textLabel setText:[planets objectAtIndex: indexPath.row]];
+    OuterSpaceObject *planet = [planets objectAtIndex: indexPath.row];
+    [cell.textLabel setText: planet.name];
+    [cell.detailTextLabel setText: planet.nickname];
+    [cell.imageView setImage: planet.spaceImage];
+    [cell setBackgroundColor: [UIColor clearColor]];
+    [cell.textLabel setTextColor: [UIColor whiteColor]];
+    [cell.detailTextLabel setTextColor: [UIColor colorWithWhite:0.5 alpha:1.0]];
     
     return cell;
 }
