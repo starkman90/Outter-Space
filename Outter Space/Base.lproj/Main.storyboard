@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qCW-Yv-tpA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qCW-Yv-tpA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -33,7 +33,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="M7s-BE-sai" kind="show" id="e1u-lY-WAv"/>
+                                    <segue destination="25b-pk-Uuh" kind="show" id="ZRU-be-l8A"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -49,32 +49,37 @@
             </objects>
             <point key="canvasLocation" x="615" y="321"/>
         </scene>
-        <!--Space Image View Comtroller-->
-        <scene sceneID="4wo-E6-a9o">
+        <!--Space Image View Controller-->
+        <scene sceneID="CS8-jl-kzG">
             <objects>
-                <viewController id="M7s-BE-sai" customClass="SpaceImageViewComtroller" sceneMemberID="viewController">
+                <viewController id="25b-pk-Uuh" customClass="SpaceImageViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IL9-xO-uYW"/>
-                        <viewControllerLayoutGuide type="bottom" id="3pY-j4-WmE"/>
+                        <viewControllerLayoutGuide type="top" id="51d-yn-d9N"/>
+                        <viewControllerLayoutGuide type="bottom" id="BHG-g9-G7O"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="K4z-XF-DjT">
+                    <view key="view" contentMode="scaleToFill" id="xPl-8J-m4g">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LQP-G5-E4C">
-                                <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVz-4h-dBy">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BHG-g9-G7O" firstAttribute="top" secondItem="eVz-4h-dBy" secondAttribute="bottom" id="1QX-He-eTb"/>
+                            <constraint firstItem="eVz-4h-dBy" firstAttribute="leading" secondItem="xPl-8J-m4g" secondAttribute="leading" id="7xg-c4-wqh"/>
+                            <constraint firstAttribute="trailing" secondItem="eVz-4h-dBy" secondAttribute="trailing" id="Up2-9J-SdA"/>
+                            <constraint firstItem="eVz-4h-dBy" firstAttribute="top" secondItem="51d-yn-d9N" secondAttribute="bottom" id="zke-MR-fK5"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="scrollView" destination="LQP-G5-E4C" id="cqp-5z-CwE"/>
+                        <outlet property="scrollView" destination="eVz-4h-dBy" id="dW8-8L-blY"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r3f-Ah-3rd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="afS-8q-TNn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1053" y="321"/>
+            <point key="canvasLocation" x="1021" y="321"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dGW-s9-Esv">

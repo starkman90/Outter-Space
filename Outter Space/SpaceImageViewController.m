@@ -1,22 +1,29 @@
 //
-//  SpaceImageViewComtroller.m
+//  SpaceImageViewController.m
 //  Outter Space
 //
-//  Created by Shayne Stark on 1/17/15.
+//  Created by Jude Murphy on 2/24/15.
 //  Copyright (c) 2015 Spark Apps, LLC. All rights reserved.
 //
 
-#import "SpaceImageViewComtroller.h"
+#import "SpaceImageViewController.h"
 
-@interface SpaceImageViewComtroller ()
+@interface SpaceImageViewController ()
 
 @end
 
-@implementation SpaceImageViewComtroller
+@implementation SpaceImageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    _imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: @"Jupiter.jpg"]];
+    [[self scrollView] setContentSize: [self imageView].frame.size];
+    [[self scrollView] addSubview: [self imageView]];
+    [[self scrollView] setDelegate: self];
+    [[self scrollView] setMaximumZoomScale: 2.0];
+    [[self scrollView] setMinimumZoomScale: 0.5];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +40,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return [self imageView];
+}
 
 @end

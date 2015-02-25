@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		262C61C51A6A3217006E8F59 /* SpaceImageViewComtroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 262C61C41A6A3217006E8F59 /* SpaceImageViewComtroller.m */; };
 		26847D851A68D26700C09420 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26847D841A68D26700C09420 /* main.m */; };
 		26847D881A68D26700C09420 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26847D871A68D26700C09420 /* AppDelegate.m */; };
 		26847D8E1A68D26700C09420 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26847D8C1A68D26700C09420 /* Main.storyboard */; };
@@ -27,6 +26,7 @@
 		26F796CC1A6A1BF300CFF933 /* Uranus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26F796C21A6A1BF300CFF933 /* Uranus.jpg */; };
 		26F796CD1A6A1BF300CFF933 /* Venus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26F796C31A6A1BF300CFF933 /* Venus.jpg */; };
 		26F796D41A6A1C6400CFF933 /* OuterSpaceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F796D31A6A1C6400CFF933 /* OuterSpaceObject.m */; };
+		A6D649C21A9D464F000FF242 /* SpaceImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D649C11A9D464F000FF242 /* SpaceImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		262C61C31A6A3217006E8F59 /* SpaceImageViewComtroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceImageViewComtroller.h; sourceTree = "<group>"; };
-		262C61C41A6A3217006E8F59 /* SpaceImageViewComtroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceImageViewComtroller.m; sourceTree = "<group>"; };
 		26847D7F1A68D26700C09420 /* Outter Space.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Outter Space.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26847D831A68D26700C09420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26847D841A68D26700C09420 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -69,6 +67,8 @@
 		26F796C31A6A1BF300CFF933 /* Venus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Venus.jpg; sourceTree = "<group>"; };
 		26F796D21A6A1C6400CFF933 /* OuterSpaceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OuterSpaceObject.h; sourceTree = "<group>"; };
 		26F796D31A6A1C6400CFF933 /* OuterSpaceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OuterSpaceObject.m; sourceTree = "<group>"; };
+		A6D649C01A9D464F000FF242 /* SpaceImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceImageViewController.h; sourceTree = "<group>"; };
+		A6D649C11A9D464F000FF242 /* SpaceImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,11 +114,11 @@
 				26847D871A68D26700C09420 /* AppDelegate.m */,
 				26F796D21A6A1C6400CFF933 /* OuterSpaceObject.h */,
 				26F796D31A6A1C6400CFF933 /* OuterSpaceObject.m */,
-				262C61C31A6A3217006E8F59 /* SpaceImageViewComtroller.h */,
-				262C61C41A6A3217006E8F59 /* SpaceImageViewComtroller.m */,
 				26847D8C1A68D26700C09420 /* Main.storyboard */,
 				26EDDCF61A68D47200004E8F /* TableViewController.h */,
 				26EDDCF71A68D47200004E8F /* TableViewController.m */,
+				A6D649C01A9D464F000FF242 /* SpaceImageViewController.h */,
+				A6D649C11A9D464F000FF242 /* SpaceImageViewController.m */,
 				26847D8F1A68D26700C09420 /* Images.xcassets */,
 				26847D911A68D26700C09420 /* LaunchScreen.xib */,
 				26847D821A68D26700C09420 /* Supporting Files */,
@@ -284,10 +284,10 @@
 			files = (
 				26847D881A68D26700C09420 /* AppDelegate.m in Sources */,
 				26EDDCF81A68D47200004E8F /* TableViewController.m in Sources */,
-				262C61C51A6A3217006E8F59 /* SpaceImageViewComtroller.m in Sources */,
 				26847D851A68D26700C09420 /* main.m in Sources */,
 				26F796D41A6A1C6400CFF933 /* OuterSpaceObject.m in Sources */,
 				26EDDCFB1A68EA3600004E8F /* AstronomicalData.m in Sources */,
+				A6D649C21A9D464F000FF242 /* SpaceImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
