@@ -9,13 +9,13 @@
 #import "TableViewController.h"
 #import "AstronomicalData.h"
 #import "OuterSpaceObject.h"
+#import "SpaceImageViewController.h"
 
 @interface TableViewController ()
 
 @end
 
 @implementation TableViewController
-@synthesize planets;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,12 +26,26 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    planets = [[NSMutableArray alloc] init];
+    _planets = [[NSMutableArray alloc] init];
     
     for (NSMutableDictionary *planetData in [AstronomicalData allKnownPlanets]) {
         NSString *imageName = [NSString stringWithFormat:@"%@.jpg", planetData[PLANET_NAME]];
         OuterSpaceObject *planet = [[OuterSpaceObject alloc] initWithData:planetData andImage:[UIImage imageNamed:imageName]];
-        [planets addObject: planet];
+        [[self planets] addObject: planet];
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([sender isKindOfClass: [UITableViewCell class]])
+    {
+        if ([segue.destinationViewController isKindOfClass:[SpaceImageViewController class]])
+        {
+            SpaceImageViewController *nextViewController = segue.destinationViewController;
+            NSIndexPath *path = [[self tableView] indexPathForCell: sender];
+            OuterSpaceObject *selectedObject = [[self planets] objectAtIndex: path.row];
+            nextViewController.spaceObject = selectedObject;
+        }
     }
 }
 
@@ -49,7 +63,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [planets count];
+    return [[self planets] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -58,7 +72,7 @@
     
     // Configure the cell...
     
-    OuterSpaceObject *planet = [planets objectAtIndex: indexPath.row];
+    OuterSpaceObject *planet = [[self planets] objectAtIndex: indexPath.row];
     [cell.textLabel setText: planet.name];
     [cell.detailTextLabel setText: planet.nickname];
     [cell.imageView setImage: planet.spaceImage];

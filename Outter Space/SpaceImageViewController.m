@@ -18,9 +18,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: @"Jupiter.jpg"]];
+    _imageView = [[UIImageView alloc] initWithImage: [self spaceObject].spaceImage];
     [[self scrollView] setContentSize: [self imageView].frame.size];
     [[self scrollView] addSubview: [self imageView]];
+    
     [[self scrollView] setDelegate: self];
     [[self scrollView] setMaximumZoomScale: 2.0];
     [[self scrollView] setMinimumZoomScale: 0.5];
